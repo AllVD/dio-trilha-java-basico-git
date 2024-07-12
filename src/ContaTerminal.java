@@ -1,18 +1,17 @@
 /* 
 * <h1>ContaTerminal</h1>
-* A Calculadora realiza operações matemáticas entre números inteiros
-* <p>
 * <b>Note:</b> ContaBanco receberá dados via terminal contendo as características
-*  de conta em banco, a classe ContaTerminal.java ira realizar toda a codificação do nosso programa.
+* de conta em banco, a classe ContaTerminal.java ira realizar toda a codificação do nosso programa.
 * @author  AlvD
-* @version 1.0
+* @version 1.2
 * @since   12/07/2024
 */
 
+import java.util.Locale;
 import java.util.Scanner;
 public class ContaTerminal {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
         System.out.println("Por favor, digite o número da Agência:");
         String agencia = scanner.nextLine();
@@ -20,7 +19,7 @@ public class ContaTerminal {
         System.out.println("Por favor, digite o número da Conta:");
         int numero = scanner.nextInt();
 
-        // Consumir a nova linha deixada pelo nextInt()
+        // Consumir a nova linha deixada pelo nextInt() para o próximo nextInt() funcionar corretamente
         scanner.nextLine();
 
         System.out.println("Por favor, digite o nome do Cliente:");
@@ -37,4 +36,4 @@ public class ContaTerminal {
 
         scanner.close();
     }
-}cd
+}
